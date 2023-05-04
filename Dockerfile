@@ -1,5 +1,5 @@
 # This image for OpenBMC build
-FROM ubuntu:bionic
+FROM ubuntu:20.04
 
 ARG TARGETPLATFORM
 ARG DEBIAN_FRONTEND=noninteractive
@@ -16,7 +16,7 @@ ENV LANGUAGE en_US:en
 
 RUN apt install -yy build-essential chrpath cpio \
         debianutils diffstat file gawk git iputils-ping \
-        libdata-dumper-simple-perl liblz4-tool libsdl1.2-dev libthread-queue-any-perl \
+        libdata-dumper-simple-perl liblz4-tool libsdl1.2-dev libthread-queue-any-perl vim openssh-server openssh-client net-tools \
         python3 socat subversion texinfo wget zstd git-lfs && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
